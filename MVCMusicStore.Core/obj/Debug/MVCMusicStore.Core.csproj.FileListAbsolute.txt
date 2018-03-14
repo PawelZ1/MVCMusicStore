@@ -1,0 +1,6 @@
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\bin\Debug\MVCMusicStore.Core.dll
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\bin\Debug\MVCMusicStore.Core.pdb
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\obj\Debug\MVCMusicStore.Core.csprojResolveAssemblyReference.cache
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\obj\Debug\MVCMusicStore.Core.csproj.CoreCompileInputs.cache
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\obj\Debug\MVCMusicStore.Core.dll
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\obj\Debug\MVCMusicStore.Core.pdb
