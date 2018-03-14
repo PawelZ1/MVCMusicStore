@@ -70,6 +70,20 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVCMusicStore.Client\MVCMusicStore.Client.csproj">
+      <Project>{9adace5b-c9a7-439c-8956-aac05e1e33dd}</Project>
+      <Name>MVCMusicStore.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVCMusicStore.Core\MVCMusicStore.Core.csproj">
+      <Project>{0eb7ddae-3dbf-4e00-ac4d-386558d48ac1}</Project>
+      <Name>MVCMusicStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVCMusicStore.Infrastructure\MVCMusicStore.Infrastructure.csproj">
+      <Project>{d8ff207f-2e72-455d-9ff2-e9bff2b226ec}</Project>
+      <Name>MVCMusicStore.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

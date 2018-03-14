@@ -30,3 +30,8 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.csproj.CopyComplete
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.pdb
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\bin\Debug\MVCMusicStore.Core.dll
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\bin\Debug\MVCMusicStore.Core.pdb
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\bin\Debug\MVCMusicStore.Core.dll.config
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.initial.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.csproj.GenerateResource.cache

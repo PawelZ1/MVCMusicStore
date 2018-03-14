@@ -6,6 +6,16 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MVCMusicStore.Client.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Autofac;
+using MVCMusicStore.Infrastructure.EF;
+using MVCMusicStore.Infrastructure.Repositories;
+using MVCMusicStore.Core.Models;
+using MVCMusicStore.Infrastructure.Service;
+using Microsoft.Owin.Security;
+using System.Web.Mvc;
+using Autofac.Integration.Mvc;
+using System.Web;
 
 namespace MVCMusicStore.Client
 {
@@ -14,14 +24,29 @@ namespace MVCMusicStore.Client
         // Aby uzyskać więcej informacji o konfigurowaniu uwierzytelniania, odwiedź stronę https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-            // Skonfiguruj kontekst bazy danych, menedżera użytkowników i menedżera logowania, aby używać jednego wystąpienia na żądanie
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
-            app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            var builder = new ContainerBuilder();
 
-            // Zezwalaj aplikacji na przechowywanie w pliku cookie informacji o zalogowanym użytkowniku
-            // oraz na tymczasowe przechowywanie w pliku cookie informacji o użytkowniku logującym się przy użyciu dostawcy logowania innego producenta
-            // Konfiguruj plik cookie logowania
+            // REGISTER DEPENDENCIES
+            builder.RegisterType<MVCMusicStoreDBContext>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationUserStore>().As<IUserStore<ApplicationUser>>().InstancePerRequest();
+            builder.RegisterType<RoleStore<IdentityRole>>().As<IRoleStore<IdentityRole, string>>().InstancePerRequest();
+            builder.RegisterType<RoleManager<IdentityRole>>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
+            builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
+            builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
+
+            // REGISTER CONTROLLERS SO DEPENDENCIES ARE CONSTRUCTOR INJECTED
+            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+
+            // BUILD THE CONTAINER
+            var container = builder.Build();
+
+            // REPLACE THE MVC DEPENDENCY RESOLVER WITH AUTOFAC
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            // REGISTER WITH OWIN
+            app.UseAutofacMiddleware(container);
+            app.UseAutofacMvc();
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
