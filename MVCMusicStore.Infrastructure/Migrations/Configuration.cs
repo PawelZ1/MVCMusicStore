@@ -1,5 +1,9 @@
 namespace MVCMusicStore.Infrastructure.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using MVCMusicStore.Core.Models;
+    using MVCMusicStore.Infrastructure.Service;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +22,13 @@ namespace MVCMusicStore.Infrastructure.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+
+            ApplicationUserManager _userMgr = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
+            RoleManager<IdentityRole> _roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+
+            // Seeding user roles
+            // _roleManager.CreateAsync(new IdentityRole());
         }
     }
 }
