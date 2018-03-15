@@ -29,3 +29,4 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\bin\Debug\pl\Micros
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\bin\Debug\pl\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\bin\Debug\pl\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\obj\Debug\MVCMusicStore.Core.csproj.CopyComplete
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Core\obj\Debug\MVCMusicStore.Core.csprojResolveAssemblyReference.cache

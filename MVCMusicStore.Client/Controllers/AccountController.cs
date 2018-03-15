@@ -301,7 +301,7 @@ namespace MVCMusicStore.Client.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
-            var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
+            var loginInfo = await _authManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {
                 return RedirectToAction("Login");
@@ -341,7 +341,7 @@ namespace MVCMusicStore.Client.Controllers
             if (ModelState.IsValid)
             {
                 // Uzyskaj informacje o użytkowniku od dostawcy logowania zewnętrznego
-                var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+                var info = await _authManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
                     return View("ExternalLoginFailure");
@@ -370,7 +370,7 @@ namespace MVCMusicStore.Client.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            _authManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
 
@@ -386,13 +386,6 @@ namespace MVCMusicStore.Client.Controllers
         // Używane w przypadku ochrony XSRF podczas dodawania logowań zewnętrznych
         private const string XsrfKey = "XsrfId";
 
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }
 
         private void AddErrors(IdentityResult result)
         {

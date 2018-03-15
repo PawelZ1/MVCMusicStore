@@ -18,5 +18,15 @@ namespace MVCMusicStore.Infrastructure.EF
         {
             return new MVCMusicStoreDBContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //Users table
+            var users = modelBuilder.Entity<ApplicationUser>();
+
+            users.ToTable("Users");
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
