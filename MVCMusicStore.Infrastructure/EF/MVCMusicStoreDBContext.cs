@@ -21,12 +21,27 @@ namespace MVCMusicStore.Infrastructure.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             //Users table
             var users = modelBuilder.Entity<ApplicationUser>();
-
             users.ToTable("Users");
 
-            base.OnModelCreating(modelBuilder);
+            //Roles table
+            var roles = modelBuilder.Entity<IdentityRole>();
+            roles.ToTable("Roles");
+
+            //User roles table
+            var userRoles = modelBuilder.Entity<IdentityUserRole>();
+            userRoles.ToTable("UserRoles");
+
+            //User logins table
+            var userLogins = modelBuilder.Entity<IdentityUserLogin>();
+            userLogins.ToTable("UserLogins");
+
+            //User claims table
+            var userClaims = modelBuilder.Entity<IdentityUserClaim>();
+            userClaims.ToTable("UserClaims");
         }
     }
 }

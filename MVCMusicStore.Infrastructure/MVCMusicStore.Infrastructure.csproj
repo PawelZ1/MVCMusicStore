@@ -81,6 +81,14 @@
     <Compile Include="Migrations\201803141111507_initial.Designer.cs">
       <DependentUpon>201803141111507_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803150823567_users table.cs" />
+    <Compile Include="Migrations\201803150823567_users table.Designer.cs">
+      <DependentUpon>201803150823567_users table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803150844173_identity tables names changed.cs" />
+    <Compile Include="Migrations\201803150844173_identity tables names changed.Designer.cs">
+      <DependentUpon>201803150844173_identity tables names changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationUserStore.cs" />
@@ -102,6 +110,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803141111507_initial.resx">
       <DependentUpon>201803141111507_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803150823567_users table.resx">
+      <DependentUpon>201803150823567_users table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803150844173_identity tables names changed.resx">
+      <DependentUpon>201803150844173_identity tables names changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
