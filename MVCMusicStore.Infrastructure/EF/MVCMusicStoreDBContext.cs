@@ -12,6 +12,7 @@ namespace MVCMusicStore.Infrastructure.EF
         public MVCMusicStoreDBContext()
             : base("name=MVCMusicStoreDBContext")
         {
+            Database.SetInitializer(new CreateDatabaseIfNotExists<MVCMusicStoreDBContext>());
         }
 
         public static MVCMusicStoreDBContext Create()
