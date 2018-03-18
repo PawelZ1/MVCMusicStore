@@ -20,13 +20,11 @@ namespace MVCMusicStore.Client.Controllers
     {
         private readonly ApplicationUserManager _userManager;
         private readonly ApplicationSignInManager _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IAuthenticationManager _authManager;
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, RoleManager<IdentityRole> roleManager, IAuthenticationManager authManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IAuthenticationManager authManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _roleManager = roleManager;
             _authManager = authManager;
         }
 

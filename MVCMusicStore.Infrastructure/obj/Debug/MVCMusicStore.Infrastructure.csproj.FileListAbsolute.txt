@@ -38,3 +38,5 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.userstable.resources
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.identitytablesnameschanged.resources
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.MasterAdminseed.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.UserAddress.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.useraddress2.resources

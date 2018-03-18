@@ -15,6 +15,8 @@ namespace MVCMusicStore.Infrastructure.EF
             Database.SetInitializer(new CreateDatabaseIfNotExists<MVCMusicStoreDBContext>());
         }
 
+        public DbSet<UserAddress> UserAddresses { get; set; }
+
         public static MVCMusicStoreDBContext Create()
         {
             return new MVCMusicStoreDBContext();
@@ -27,6 +29,7 @@ namespace MVCMusicStore.Infrastructure.EF
             //Users table
             var users = modelBuilder.Entity<ApplicationUser>();
             users.ToTable("Users");
+            users.HasOptional(s => s.Address).WithRequired(s => s.ApplicationUser);
 
             //Roles table
             var roles = modelBuilder.Entity<IdentityRole>();
@@ -43,6 +46,15 @@ namespace MVCMusicStore.Infrastructure.EF
             //User claims table
             var userClaims = modelBuilder.Entity<IdentityUserClaim>();
             userClaims.ToTable("UserClaims");
+
+            //User Address table
+            var userAddress = modelBuilder.Entity<UserAddress>();
+            userAddress.Property(s => s.Address1).IsRequired();
+            userAddress.Property(s => s.City).IsRequired();
+            userAddress.Property(s => s.Country).IsRequired();
+            userAddress.Property(s => s.State).IsRequired();
+            userAddress.Property(s => s.ZipCode).IsRequired();
+            userAddress.Property(s => s.UpdatedAt).IsRequired();
         }
     }
 }

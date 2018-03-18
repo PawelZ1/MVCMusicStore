@@ -11,6 +11,8 @@ namespace MVCMusicStore.Core.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        public virtual UserAddress Address { get; private set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
