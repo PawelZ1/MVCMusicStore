@@ -8,5 +8,6 @@ namespace MVCMusicStore.Core.Interfaces
 {
     public interface IUserAddressService
     {
+
     }
 }
