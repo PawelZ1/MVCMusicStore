@@ -15,13 +15,16 @@ namespace MVCMusicStore.Infrastructure.Repositories
     {
         private MVCMusicStoreDBContext _context;
 
+        private UserAddressRepository() { }
+
         public UserAddressRepository(MVCMusicStoreDBContext context)
         {
             _context = context;
         }
 
         public async Task CreateAsync(UserAddress address)
-        { 
+        {
+            _context.UserAddresses.Add(address);
             await _context.SaveChangesAsync();
         }
 

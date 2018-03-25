@@ -1,0 +1,57 @@
+﻿@model MVCMusicStore.Client.Models.UserAddressViewModel
+
+
+
+@using (Html.BeginForm("CreateUserAddress", "UserAddress", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    <h3 class="text-primary">Enter your address</h3>
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group row">
+        @Html.LabelFor(p => p.Address1, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(p => p.Address1, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.Address1, "", new { @class="text-danger"})
+        </div>
+
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(p => p.Address2, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(p => p.Address2, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.Address2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(p => p.City, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(p => p.City, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.City, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(p => p.ZipCode, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(p => p.ZipCode, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.ZipCode, "", new { @class = "text-danger" })
+        </div>
+    </div>
+        <div class="form-group row">
+        @Html.LabelFor(p => p.State, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(p => p.State, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.State, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        @Html.LabelFor(p => p.Country, new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(p => p.Country, new { @class = "form-control" })
+            @Html.ValidationMessageFor(p => p.Country, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-outline-primary"/>
+    </div>
+}

@@ -1,0 +1,49 @@
+﻿@model MVCMusicStore.Client.Models.UserAddressViewModel
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        @Html.ActionLink("Account Settings", "Index", "Manage", null, new { @class = "nav-link" })
+    </li>
+    <li>
+        @Html.ActionLink("Address Settings", "Index", "UserAddress", null, new { @class = "nav-link active" })
+    </li>
+</ul>
+
+<div class="card">
+    <div class="card-body">
+        @if (Model.IsAddressGiven)
+    {
+        <div>
+            @Html.LabelFor(p => p.Address1);
+            @Html.DisplayFor(p => p.Address1);
+        </div>
+        <div>
+            @Html.LabelFor(p => p.Address2);
+            @Html.DisplayFor(p => p.Address2);
+        </div>
+        <div>
+            @Html.LabelFor(p => p.City);
+            @Html.DisplayFor(p => p.City);
+        </div>
+        <div>
+            @Html.LabelFor(p => p.Country);
+            @Html.DisplayFor(p => p.Country);
+        </div>
+        <div>
+            @Html.LabelFor(p => p.State);
+            @Html.DisplayFor(p => p.State);
+        </div>
+        <div>
+            @Html.LabelFor(p => p.ZipCode);
+            @Html.DisplayFor(p => p.ZipCode);
+        </div>
+        @Html.ActionLink("Change address", "EditUserAddress", "UserAddress", null, new { @class = "btn btn-outline-primary btn-sm" })
+        }
+        else
+        {
+        <p class="text-lg-left text-info">No address is given currently</p>
+        @Html.ActionLink("Add address", "CreateUserAddress", "UserAddress", null, new { @class = "btn btn-outline-primary btn-sm" })
+        }
+    </div>
+</div>
+

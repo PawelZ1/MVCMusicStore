@@ -50,17 +50,12 @@ namespace MVCMusicStore.Client.Controllers
                 return View(model);
             }
 
-            // Nie powoduje to liczenia niepowodzeń logowania w celu zablokowania konta
             // Aby włączyć wyzwalanie blokady konta po określonej liczbie niepomyślnych prób wprowadzenia hasła, zmień ustawienie na shouldLockout: true
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Nieprawidłowa próba logowania.");
@@ -89,8 +84,8 @@ namespace MVCMusicStore.Client.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user.Id, "User");
                     await _signInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

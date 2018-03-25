@@ -17,6 +17,7 @@ using System.Web.Mvc;
 using Autofac.Integration.Mvc;
 using System.Web;
 using MVCMusicStore.Core.Interfaces;
+using MVCMusicStore.Infrastructure.Interfaces;
 
 namespace MVCMusicStore.Client
 {
@@ -35,8 +36,9 @@ namespace MVCMusicStore.Client
             builder.RegisterType<ApplicationUserManager>().AsSelf().InstancePerRequest();
             builder.RegisterType<ApplicationSignInManager>().AsSelf().InstancePerRequest();
             builder.Register<IAuthenticationManager>(c => HttpContext.Current.GetOwinContext().Authentication).InstancePerRequest();
-            //builder.RegisterType<UserAddressRepository>().As<IUserAddressRepository>().InstancePerRequest();
-
+            builder.RegisterType<UserAddressRepository>().As<IUserAddressRepository>().InstancePerRequest();
+            builder.RegisterType<UserAddressService>().As<IUserAddressService>().InstancePerRequest();
+            
             // REGISTER CONTROLLERS SO DEPENDENCIES ARE CONSTRUCTOR INJECTED
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 

@@ -75,7 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IUserAddressRepository.cs" />
-    <Compile Include="Interfaces\IUserAddressService.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Artist.cs" />

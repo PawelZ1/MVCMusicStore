@@ -23,16 +23,13 @@ namespace MVCMusicStore.Infrastructure.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-
             ApplicationUserManager _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
             RoleManager<IdentityRole> _roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-
 
             // Seeding user roles
             IdentityRole master = new IdentityRole("Master Admin");
             IdentityRole admin = new IdentityRole("Admin");
             IdentityRole user = new IdentityRole("User");
-
 
             if (!_roleManager.RoleExists(master.Name))
                 _roleManager.Create(master);
@@ -52,6 +49,7 @@ namespace MVCMusicStore.Infrastructure.Migrations
             if (!_userManager.IsInRole(masterAdmin.Id, master.Name))
                 _userManager.AddToRole(masterAdmin.Id, master.Name);
 
+            //Seeding
             base.Seed(context);
         }
     }

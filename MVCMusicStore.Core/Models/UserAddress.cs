@@ -20,8 +20,11 @@ namespace MVCMusicStore.Core.Models
         public string Country { get; private set; }
         public DateTime UpdatedAt { get; private set; }
 
-        public UserAddress(string address1, string address2, string city, string zipCode, string state, string country)
+        private UserAddress() { }
+
+        public UserAddress(string userAddressId, string address1, string address2, string city, string zipCode, string state, string country)
         {
+            UserAddressId = userAddressId;
             SetAddress(address1, address2);
             SetCity(city);
             SetZipCode(zipCode);

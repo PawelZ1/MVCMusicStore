@@ -76,7 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\UserAddressDTO.cs" />
     <Compile Include="EF\MVCMusicStoreDBContext.cs" />
+    <Compile Include="Interfaces\IUserAddressService.cs" />
     <Compile Include="Migrations\201803141111507_initial.cs" />
     <Compile Include="Migrations\201803141111507_initial.Designer.cs">
       <DependentUpon>201803141111507_initial.cs</DependentUpon>
@@ -101,12 +103,17 @@
     <Compile Include="Migrations\201803180156402_user address2.Designer.cs">
       <DependentUpon>201803180156402_user address2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803241547234_user class modification.cs" />
+    <Compile Include="Migrations\201803241547234_user class modification.Designer.cs">
+      <DependentUpon>201803241547234_user class modification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationUserStore.cs" />
     <Compile Include="Repositories\UserAddressRepository.cs" />
     <Compile Include="Service\ApplicationSignInManager.cs" />
     <Compile Include="Service\ApplicationUserManager.cs" />
+    <Compile Include="Service\UserAddressService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -139,6 +146,10 @@
     <EmbeddedResource Include="Migrations\201803180156402_user address2.resx">
       <DependentUpon>201803180156402_user address2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803241547234_user class modification.resx">
+      <DependentUpon>201803241547234_user class modification.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

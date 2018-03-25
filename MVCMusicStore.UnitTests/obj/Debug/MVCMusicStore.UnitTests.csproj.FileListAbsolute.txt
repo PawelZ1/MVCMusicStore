@@ -130,7 +130,6 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Syst
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Owin.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Autofac.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Autofac.Integration.Mvc.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Autofac.Integration.Owin.dll
