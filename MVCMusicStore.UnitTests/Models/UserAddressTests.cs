@@ -14,7 +14,7 @@ namespace MVCMusicStore.UnitTests.Models
     {
         public UserAddress CreateUserAddress()
         {
-            return new UserAddress("testAddress1", "testAddress2", "testCity", "33-333", "testState", "testCountry");
+            return new UserAddress("111", "testAddress1", "testAddress2", "testCity", "33-333", "testState", "testCountry");
         } 
 
         [Test]

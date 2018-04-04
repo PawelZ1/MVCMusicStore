@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace MVCMusicStore.Client.Controllers
 {
+    [Authorize]
     public class UserAddressController : Controller
     {
         private readonly IUserAddressService _userAddress;
@@ -40,7 +41,7 @@ namespace MVCMusicStore.Client.Controllers
                 Address1 = address.Address1,
                 Address2 = address.Address2,
                 City = address.City,
-                ZipCode = address.City,
+                ZipCode = address.ZipCode,
                 State = address.State,
                 Country = address.Country
              };
@@ -81,5 +82,39 @@ namespace MVCMusicStore.Client.Controllers
         {
             return View();
         }
+
+        //POST: UserAddress/EditUserAddress
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditUserAddress(UserAddressViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var userToEdit = new UserAddressDTO
+                {
+                    UserAddressId = User.Identity.GetUserId(),
+                    Address1 = model.Address1,
+                    Address2 = model.Address2,
+                    City = model.City,
+                    ZipCode = model.ZipCode,
+                    State = model.State,
+                    Country = model.Country
+                };
+                await _userAddress.UpdateAdressAsync(userToEdit);
+                return RedirectToAction("Index", "UserAddress");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RemoveUserAddres()
+        {
+            string id = User.Identity.GetUserId();
+            await _userAddress.RemoveUserAddress(id);
+            return RedirectToAction("Index", "UserAddress");
+        }
+
+
     }
 }

@@ -12,37 +12,72 @@
 <div class="card">
     <div class="card-body">
         @if (Model.IsAddressGiven)
-    {
-        <div>
-            @Html.LabelFor(p => p.Address1);
-            @Html.DisplayFor(p => p.Address1);
-        </div>
-        <div>
-            @Html.LabelFor(p => p.Address2);
-            @Html.DisplayFor(p => p.Address2);
-        </div>
-        <div>
-            @Html.LabelFor(p => p.City);
-            @Html.DisplayFor(p => p.City);
-        </div>
-        <div>
-            @Html.LabelFor(p => p.Country);
-            @Html.DisplayFor(p => p.Country);
-        </div>
-        <div>
-            @Html.LabelFor(p => p.State);
-            @Html.DisplayFor(p => p.State);
-        </div>
-        <div>
-            @Html.LabelFor(p => p.ZipCode);
-            @Html.DisplayFor(p => p.ZipCode);
-        </div>
-        @Html.ActionLink("Change address", "EditUserAddress", "UserAddress", null, new { @class = "btn btn-outline-primary btn-sm" })
+        {
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.LabelFor(p => p.Address1)
+                        </div>
+                        <div class="col-sm-10">
+                            @Html.DisplayFor(p => p.Address1)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.LabelFor(p => p.Address2)
+                        </div>
+                        <div class="col-sm-10">
+                            @Html.DisplayFor(p => p.Address2)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.LabelFor(p => p.City)
+                        </div>
+                        <div class="col-sm-10">
+                            @Html.DisplayFor(p => p.City)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.LabelFor(p => p.Country)
+                        </div>
+                        <div class="col-sm-10">
+                            @Html.DisplayFor(p => p.Country)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.LabelFor(p => p.State)
+                        </div>
+                        <div class="col-sm-10">
+                            @Html.DisplayFor(p => p.State)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            @Html.LabelFor(p => p.ZipCode)
+                        </div>
+                        <div class="col-sm-10">
+                            @Html.DisplayFor(p => p.ZipCode)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group btn-group-sm">
+                @Html.ActionLink("Change address", "EditUserAddress", "UserAddress", null, new { @class = "btn btn-outline-primary btn-sm" })
+                @using(Html.BeginForm("RemoveUserAddres", "UserAddress", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit"  value="Remove Address" class="btn btn-outline-primary btn-sm"/>
+                }
+            </div>
         }
         else
         {
-        <p class="text-lg-left text-info">No address is given currently</p>
-        @Html.ActionLink("Add address", "CreateUserAddress", "UserAddress", null, new { @class = "btn btn-outline-primary btn-sm" })
+            <p class="text-lg-left text-info">No address is given currently</p>
+            @Html.ActionLink("Add address", "CreateUserAddress", "UserAddress", null, new { @class = "btn btn-outline-primary btn-sm" })
         }
     </div>
 </div>

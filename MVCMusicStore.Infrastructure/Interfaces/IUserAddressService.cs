@@ -13,5 +13,6 @@ namespace MVCMusicStore.Infrastructure.Interfaces
         Task<UserAddressDTO> GetAddress(string id);
         Task CreateAddress(UserAddressDTO address);
         Task UpdateAdressAsync(UserAddressDTO address);
+        Task RemoveUserAddress(string id);
     }
 }

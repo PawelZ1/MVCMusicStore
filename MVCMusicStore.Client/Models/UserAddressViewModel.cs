@@ -7,7 +7,6 @@ namespace MVCMusicStore.Client.Models
 {
     public class UserAddressViewModel
     {
-        public bool IsAddressGiven { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string City { get; set; }

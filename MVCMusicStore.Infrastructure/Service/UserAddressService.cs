@@ -41,9 +41,15 @@ namespace MVCMusicStore.Infrastructure.Service
             };
         }
 
-        public Task UpdateAdressAsync(UserAddressDTO address)
+        public async Task RemoveUserAddress(string id)
         {
-            throw new NotImplementedException();
+            await _userAddress.RemoveAsync(id);
+        }
+
+        public async Task UpdateAdressAsync(UserAddressDTO address)
+        {
+            var user = new UserAddress(address.UserAddressId, address.Address1, address.Address2, address.City, address.ZipCode, address.State, address.Country);
+            await _userAddress.UpdateAsync(user);
         }
     }
 }

@@ -154,7 +154,6 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Syst
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\System.Web.Mvc.xml
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Autofac.xml
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Autofac.Integration.Mvc.xml
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Autofac.Integration.Owin.xml
@@ -170,7 +169,6 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\Syst
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\System.Web.Optimization.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\System.Web.Mvc.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\Microsoft.AspNet.Identity.Core.resources.dll
-C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\System.Web.WebPages.resources.dll
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.UnitTests\bin\Debug\pl\System.Web.WebPages.Razor.resources.dll
