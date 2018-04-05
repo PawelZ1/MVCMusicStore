@@ -10,9 +10,9 @@ namespace MVCMusicStore.Infrastructure.Interfaces
 {
     public interface IUserAddressService
     {
-        Task<UserAddressDTO> GetAddress(string id);
-        Task CreateAddress(UserAddressDTO address);
+        Task<UserAddressDTO> GetAddressAsync(string id);
+        Task CreateAddressAsync(UserAddressDTO address);
         Task UpdateAdressAsync(UserAddressDTO address);
-        Task RemoveUserAddress(string id);
+        Task RemoveUserAddressAsync(string id);
     }
 }

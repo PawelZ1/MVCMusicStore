@@ -25,7 +25,7 @@ namespace MVCMusicStore.Client.Controllers
         public async Task<ActionResult> Index()
         {
 
-            var address = await _userAddress.GetAddress(User.Identity.GetUserId());
+            var address = await _userAddress.GetAddressAsync(User.Identity.GetUserId());
             if(address == null)
             {
                 UserAddressViewModel addressNotGiven = new UserAddressViewModel
@@ -71,7 +71,7 @@ namespace MVCMusicStore.Client.Controllers
                 State = model.State,
                 Country = model.Country
                 };
-                await _userAddress.CreateAddress(userAddress);
+                await _userAddress.CreateAddressAsync(userAddress);
                 return RedirectToAction("Index", "UserAddress");
             }
             return View();
@@ -111,7 +111,7 @@ namespace MVCMusicStore.Client.Controllers
         public async Task<ActionResult> RemoveUserAddres()
         {
             string id = User.Identity.GetUserId();
-            await _userAddress.RemoveUserAddress(id);
+            await _userAddress.RemoveUserAddressAsync(id);
             return RedirectToAction("Index", "UserAddress");
         }
 

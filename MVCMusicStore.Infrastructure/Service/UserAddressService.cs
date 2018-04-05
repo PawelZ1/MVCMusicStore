@@ -19,35 +19,42 @@ namespace MVCMusicStore.Infrastructure.Service
             _userAddress = userAddress;
         }
 
-        public async Task CreateAddress(UserAddressDTO address)
+        public async Task CreateAddressAsync(UserAddressDTO address)
         {
+            if (address == null)
+                throw new ArgumentNullException();
             var user = new UserAddress(address.UserAddressId, address.Address1, address.Address2, address.City, address.ZipCode, address.State, address.Country);
             await _userAddress.CreateAsync(user);
         }
 
-        public async Task<UserAddressDTO> GetAddress(string id)
+        public async Task<UserAddressDTO> GetAddressAsync(string id)
         {
-            var user = await _userAddress.GetAsync(id);
-            if (user == null)
+            var userAddress = await _userAddress.GetAsync(id);
+            if (userAddress == null)
                 return null;
             return new UserAddressDTO
             {
-                Address1 = user.Address1,
-                Address2 = user.Address2,
-                City = user.City,
-                ZipCode = user.ZipCode,
-                State = user.State,
-                Country = user.Country
+                UserAddressId = userAddress.UserAddressId,
+                Address1 = userAddress.Address1,
+                Address2 = userAddress.Address2,
+                City = userAddress.City,
+                ZipCode = userAddress.ZipCode,
+                State = userAddress.State,
+                Country = userAddress.Country
             };
         }
 
-        public async Task RemoveUserAddress(string id)
+        public async Task RemoveUserAddressAsync(string id)
         {
+            if (id == null)
+                throw new ArgumentNullException();
             await _userAddress.RemoveAsync(id);
         }
 
         public async Task UpdateAdressAsync(UserAddressDTO address)
         {
+            if (address == null)
+                throw new ArgumentNullException();
             var user = new UserAddress(address.UserAddressId, address.Address1, address.Address2, address.City, address.ZipCode, address.State, address.Country);
             await _userAddress.UpdateAsync(user);
         }
