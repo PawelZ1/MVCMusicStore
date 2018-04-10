@@ -49,6 +49,8 @@ namespace MVCMusicStore.Infrastructure.Migrations
             if (!_userManager.IsInRole(masterAdmin.Id, master.Name))
                 _userManager.AddToRole(masterAdmin.Id, master.Name);
 
+            // 
+
             //Seeding
             base.Seed(context);
         }

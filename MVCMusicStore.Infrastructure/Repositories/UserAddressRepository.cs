@@ -24,17 +24,23 @@ namespace MVCMusicStore.Infrastructure.Repositories
 
         public async Task CreateAsync(UserAddress address)
         {
+            if (address == null)
+                throw new ArgumentNullException();
             _context.UserAddresses.Add(address);
             await _context.SaveChangesAsync();
         }
 
         public async Task<UserAddress> GetAsync(string id)
         {
+            if (id == null)
+                throw new ArgumentNullException();
             return await _context.UserAddresses.SingleOrDefaultAsync(s => s.UserAddressId == id);
         }
 
         public async Task RemoveAsync(string id)
         {
+            if (id == null)
+                throw new ArgumentNullException();
             var userAddress = await GetAsync(id);
             _context.UserAddresses.Remove(userAddress);
             await _context.SaveChangesAsync();
@@ -42,7 +48,9 @@ namespace MVCMusicStore.Infrastructure.Repositories
 
         public async Task UpdateAsync(UserAddress address)
         {
-            _context.UserAddresses.AddOrUpdate(address);
+            if (address == null)
+                throw new ArgumentNullException();
+            _context.Entry(address).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
     }

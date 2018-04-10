@@ -41,3 +41,6 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.UserAddress.resources
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.useraddress2.resources
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.userclassmodification.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.ArtistEntity.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.AlbumandGenreentities.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.entityconnections1.resources

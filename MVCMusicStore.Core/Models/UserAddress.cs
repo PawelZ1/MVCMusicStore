@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,16 +9,30 @@ using System.Threading.Tasks;
 
 namespace MVCMusicStore.Core.Models
 {
+    [Table("UserAddresses", Schema = "dbo")]
     public class UserAddress
     {
+        [Key]
+        [ForeignKey("ApplicationUser")]
         public string UserAddressId { get; private set; }
         public virtual ApplicationUser ApplicationUser { get; private set; }
 
+        [Required]
+        [MaxLength(200)]
         public string Address1 { get; private set; }
+        [MaxLength(200)]
         public string Address2 { get; private set; }
+        [Required]
+        [MaxLength(50)]
         public string City { get; private set; }
+        [Required]
+        [MaxLength(20)]
         public string ZipCode { get; private set; }
+        [Required]
+        [MaxLength(50)]
         public string State { get; private set; }
+        [Required]
+        [MaxLength(50)]
         public string Country { get; private set; }
         public DateTime UpdatedAt { get; private set; }
 

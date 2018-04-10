@@ -76,8 +76,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\ArtistDTO.cs" />
     <Compile Include="DTOs\UserAddressDTO.cs" />
     <Compile Include="EF\MVCMusicStoreDBContext.cs" />
+    <Compile Include="Interfaces\IArtistService.cs" />
     <Compile Include="Interfaces\IUserAddressService.cs" />
     <Compile Include="Migrations\201803141111507_initial.cs" />
     <Compile Include="Migrations\201803141111507_initial.Designer.cs">
@@ -107,12 +109,30 @@
     <Compile Include="Migrations\201803241547234_user class modification.Designer.cs">
       <DependentUpon>201803241547234_user class modification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804060722517_Artist Entity.cs" />
+    <Compile Include="Migrations\201804060722517_Artist Entity.Designer.cs">
+      <DependentUpon>201804060722517_Artist Entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804091225468_Album and Genre entities.cs" />
+    <Compile Include="Migrations\201804091225468_Album and Genre entities.Designer.cs">
+      <DependentUpon>201804091225468_Album and Genre entities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804091720206_entity connections1.cs" />
+    <Compile Include="Migrations\201804091720206_entity connections1.Designer.cs">
+      <DependentUpon>201804091720206_entity connections1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804092035162_entity connections2.cs" />
+    <Compile Include="Migrations\201804092035162_entity connections2.Designer.cs">
+      <DependentUpon>201804092035162_entity connections2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationUserStore.cs" />
+    <Compile Include="Repositories\ArtistRepository.cs" />
     <Compile Include="Repositories\UserAddressRepository.cs" />
     <Compile Include="Service\ApplicationSignInManager.cs" />
     <Compile Include="Service\ApplicationUserManager.cs" />
+    <Compile Include="Service\ArtistService.cs" />
     <Compile Include="Service\UserAddressService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +168,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803241547234_user class modification.resx">
       <DependentUpon>201803241547234_user class modification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804060722517_Artist Entity.resx">
+      <DependentUpon>201804060722517_Artist Entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091225468_Album and Genre entities.resx">
+      <DependentUpon>201804091225468_Album and Genre entities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091720206_entity connections1.resx">
+      <DependentUpon>201804091720206_entity connections1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804092035162_entity connections2.resx">
+      <DependentUpon>201804092035162_entity connections2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
