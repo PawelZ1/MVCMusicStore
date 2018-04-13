@@ -13,6 +13,7 @@ namespace MVCMusicStore.Infrastructure.EF
             : base("name=MVCMusicStoreDBContext")
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<MVCMusicStoreDBContext>());
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<UserAddress> UserAddresses { get; set; }
@@ -81,7 +82,7 @@ namespace MVCMusicStore.Infrastructure.EF
 
             albums.ToTable("Albums");
             albums.HasKey<Guid>(s => s.AlbumId);
-            albums.HasRequired(s => s.Genre).WithMany(p => p.Albums).HasForeignKey(x => x.GenreId);
+            albums.HasOptional(s => s.Genre).WithMany(p => p.Albums).HasForeignKey(x => x.GenreId);
             albums.Property(s => s.Title).IsRequired().HasMaxLength(300);
             albums.Property(s => s.Price).IsRequired().HasPrecision(8, 2);
             albums.Property(s => s.UpdatedAt).IsRequired();

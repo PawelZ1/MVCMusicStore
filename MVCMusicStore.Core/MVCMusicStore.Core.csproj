@@ -74,7 +74,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAlbumRepository.cs" />
     <Compile Include="Interfaces\IArtistRepository.cs" />
+    <Compile Include="Interfaces\IGenreRepository.cs" />
     <Compile Include="Interfaces\IUserAddressRepository.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\ApplicationUser.cs" />

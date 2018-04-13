@@ -21,7 +21,7 @@ namespace MVCMusicStore.Core.Models
 
         public virtual ICollection<Artist> Artists { get; set; }
 
-        public virtual Guid GenreId { get; set; }
+        public virtual Guid? GenreId { get; set; }
         public virtual Genre Genre { get; set; }
 
         public Album(Guid albumId, string title, decimal price)

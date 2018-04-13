@@ -29,7 +29,18 @@ namespace MVCMusicStore.Infrastructure.Service
             {
                 ArtistId = artist.ArtistId,
                 Name = artist.Name,
-                Country = artist.Country
+                Country = artist.Country,
+                Albums = artist.Albums.Select(s => new AlbumDTO
+                {
+                    AlbumId = s.AlbumId,
+                    Title = s.Title,
+                    Price = s.Price,
+                    AlbumGenre = new GenreDTO
+                    {
+                        GenreId = s.Genre.GenreId,
+                        Name = s.Genre.Name
+                    }
+                }).ToList()
             };
         }
 
@@ -56,7 +67,18 @@ namespace MVCMusicStore.Infrastructure.Service
                 {
                     ArtistId = artist.ArtistId,
                     Name = artist.Name,
-                    Country = artist.Country
+                    Country = artist.Country,
+                    Albums = artist.Albums.Select(s => new AlbumDTO
+                    {
+                        AlbumId = s.AlbumId,
+                        Title = s.Title,
+                        Price = s.Price,
+                        AlbumGenre = new GenreDTO
+                        {
+                            GenreId = s.Genre.GenreId,
+                            Name = s.Genre.Name
+                        }
+                    }).ToList()
                 });
             }
             return artistsDTO;
@@ -75,8 +97,8 @@ namespace MVCMusicStore.Infrastructure.Service
         {
             if (artist == null)
                 throw new ArgumentNullException();
-            Artist artistToUpdate = await _artistRepository.GetAsync(artist.ArtistId);
 
+            Artist artistToUpdate = await _artistRepository.GetAsync(artist.ArtistId);
             if (artistToUpdate == null)
                 throw new ArgumentNullException();
 

@@ -45,9 +45,7 @@ namespace MVCMusicStore.Infrastructure.Repositories
 
         public async Task<Artist> GetAsync(Guid id)
         {
-            if (id == null)
-                throw new ArgumentNullException();
-            return await _context.Artists.SingleOrDefaultAsync(x => x.ArtistId == id);
+            return await _context.Artists.Include(s => s.Albums).SingleOrDefaultAsync(x => x.ArtistId == id);
         }
 
         public async Task UpdateAsync(Artist artist)

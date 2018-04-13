@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace MVCMusicStore.Infrastructure.DTOs
 {
-    public class ArtistDTO
+    public class GenreDTO
     {
-        public Guid ArtistId { get; set; }
+        public Guid GenreId { get; set; }
         public string Name { get; set; }
-        public string Country { get; set; }
         public ICollection<AlbumDTO> Albums { get; set; }
     }
 }

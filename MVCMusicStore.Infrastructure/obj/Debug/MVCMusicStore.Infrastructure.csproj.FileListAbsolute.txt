@@ -44,3 +44,5 @@ C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.ArtistEntity.resources
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.AlbumandGenreentities.resources
 C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.entityconnections1.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.entityconnections2.resources
+C:\Users\pawel\source\repos\MVCMusicStore\MVCMusicStore.Infrastructure\obj\Debug\MVCMusicStore.Infrastructure.Migrations.entityconnections5.resources
